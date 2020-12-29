@@ -1,4 +1,4 @@
-# Ethereum address logger
+# Ethereum transaction logger
 
 This script will log all the transaction with ETH (amout > 0) received by a specific address to a file
 
