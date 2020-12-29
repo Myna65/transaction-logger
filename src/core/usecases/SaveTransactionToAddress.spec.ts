@@ -67,7 +67,10 @@ describe('When requested to save all transactions to an address to log', () => {
   });
 
   it('The number of valid transaction logged should match the number of valid transaction in the registry', async () => {
-    transactionRegistry?.addTransactions(successfulTransaction, successfulTransaction);
+    transactionRegistry?.addTransactions(
+      successfulTransaction,
+      successfulTransaction
+    );
     transactionLog?.lines.push('');
     await usecase?.execute({ address });
     expect(transactionLog?.lines).toHaveLength(2);
@@ -76,7 +79,9 @@ describe('When requested to save all transactions to an address to log', () => {
   it('The output format used to log should match the expected one', async () => {
     transactionRegistry?.addTransactions(successfulTransaction);
     await usecase?.execute({ address });
-    const expectedFormat = `MINT ${successfulTransaction.amount} ${successfulTransaction.from.toLowerCase()}`
+    const expectedFormat = `MINT ${
+      successfulTransaction.amount
+    } ${successfulTransaction.from.toLowerCase()}`;
     expect(transactionLog?.lines[0]).toEqual(expectedFormat);
   });
 });

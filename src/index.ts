@@ -6,8 +6,8 @@ import { EnvConfigLoader } from './adapters/real/EnvConfigLoader';
 const configLoader = new EnvConfigLoader();
 const config = configLoader.loadConfig();
 
-if(process.argv.length < 3 || process.argv[2].length !== 42) {
-  console.log('Usage: npm run minter <address>')
+if (process.argv.length < 3 || process.argv[2].length !== 42) {
+  console.log('Usage: npm run minter <address>');
   process.exit(1);
 }
 const address = process.argv[2];

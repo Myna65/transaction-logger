@@ -9,7 +9,9 @@ export class EnvConfigLoader implements ConfigLoader {
         'https://api-ropsten.etherscan.io/api',
       ETHERSCAN_API_KEY: process.env.ETHERSCAN_API_KEY || '',
       LOG_FILE_PATH: process.env.OUTPUT_PATH || 'OUTPUT.txt',
-      UPDATE_INTERVAL: process.env.UPDATE_INTERVAL ? parseInt(process.env.UPDATE_INTERVAL) : 15,
+      UPDATE_INTERVAL: process.env.UPDATE_INTERVAL
+        ? parseInt(process.env.UPDATE_INTERVAL)
+        : 15,
     };
   }
 }
